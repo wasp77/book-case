@@ -1,0 +1,19 @@
+{
+  "name": "book-case",
+  "version": "1.0.0",
+  "description": "A simple persistent object storage library taking inspiration from python's shelve.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasp77/book-case.git"
+  },
+  "author": "wasp77",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wasp77/book-case/issues"
+  },
+  "homepage": "https://github.com/wasp77/book-case#readme"
+}
