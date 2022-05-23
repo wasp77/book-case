@@ -5,14 +5,17 @@ const pick = (path) => {
   const book = {
     ...file,
     close() {
-      fs.writeFile(path, JSON.stringify(this), () => {
-        console.log("data written");
-      });
+      return new Promise((res) =>
+        fs.writeFile(path, JSON.stringify(this), () => {
+          console.log("data written");
+          res();
+        })
+      );
     },
   };
   return book;
 };
 
 module.exports = {
-  pick: pick,
+  pick,
 };
