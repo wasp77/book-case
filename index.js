@@ -1,7 +1,18 @@
 const fs = require("fs");
+const readFile = async (path) =>
+  fs.existsSync(path)
+    ? new Promise((res) => {
+        fs.readFile(path, "utf8", (_, data) => {
+          const json = JSON.parse(data);
+          console.log("init");
+          console.log(typeof json);
+          res(json);
+        });
+      })
+    : {};
 
-const pick = (path) => {
-  const file = fs.existsSync(path) ? require(path) : {};
+const pick = async (path) => {
+  const file = await readFile(path);
   const book = {
     ...file,
     close() {
